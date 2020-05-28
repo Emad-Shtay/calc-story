@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -116,6 +115,7 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="container">
         <Display equation={this.state.equation} display={this.state.display} />
         <Button id="clear" value="clear" display="AC" class="row-3 col-1" click={this.clearInput} />
@@ -137,6 +137,8 @@ class App extends Component {
         <Button id="zero" value="0" display="0" class="num row-7 col-1-2" click={this.numInput} />
         <Button id="decimal" value="." display="." class="num row-7 col-3" click={this.decInput} />
         <Button id="equals" value="=" display="=" class="oper row-7 col-4" click={this.calculate} />
+        <Story equation={this.state.equation} display={this.state.display} />
+
       </div>
     );
   }
@@ -145,5 +147,7 @@ class App extends Component {
 const Display = props => <div id="calc-display" className="row-1-2 col-1-4"><span id="eq">{props.equation}</span><span id="dis">{props.display}</span></div>;
 
 const Button = props => <button type="button" id={props.id} value={props.value} className={props.class} onClick={props.click}>{props.display}</button>;
+
+const Story = props => <div id="calc-story" className="row-1-2 col-1-4">Story</div>;
 
 export default App;

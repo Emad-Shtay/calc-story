@@ -137,7 +137,6 @@ class App extends Component {
         <Button id="zero" value="0" display="0" class="num row-7 col-1-2" click={this.numInput} />
         <Button id="decimal" value="." display="." class="num row-7 col-3" click={this.decInput} />
         <Button id="equals" value="=" display="=" class="oper row-7 col-4" click={this.calculate} />
-        <Story equation={this.state.equation} display={this.state.display} />
 
       </div>
     );
@@ -148,6 +147,5 @@ const Display = props => <div id="calc-display" className="row-1-2 col-1-4"><spa
 
 const Button = props => <button type="button" id={props.id} value={props.value} className={props.class} onClick={props.click}>{props.display}</button>;
 
-const Story = props => <div id="calc-story" className="row-1-2 col-1-4">Story</div>;
 
 export default App;
